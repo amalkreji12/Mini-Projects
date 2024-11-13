@@ -11,12 +11,27 @@ body{
     background-color: #f4e4ba;
 }
 
+h1 {
+    font-size: 2.5rem; /* Increased font size */
+    color: #333;
+    margin-bottom: 2rem; /* Increased margin */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 .container{
     background-color: #fff;
     padding: 2rem;
     border-radius: 1rem;
     min-height:45vh ;
     width: 40vh;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
 }
 
 form{
@@ -47,6 +62,13 @@ form input{
 .dropdown i {
   font-size: 1.5rem;  
   margin-top: 1rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dropdown i:hover {
+    transform: rotate(180deg);
 }
 
 .select-container img{
@@ -77,4 +99,31 @@ form button{
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.btn-btn {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
+.btn-btn {
+   
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-btn:hover {
+   background-position: right center; 
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+ .msg-container {
+    margin: 1.5rem 0;
+    color: #6c757d;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
