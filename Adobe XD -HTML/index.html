@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (Patients) -->
+            <aside class="col-md-3 bg-light p-3">
+                <h4>Patients</h4>
+                <ul id="patient-list" class="list-group">
+                    <div class="container py-4">
+                        <h2>Patients</h2>
+                        <div class="patient-list">
+                            <div class="patient-card" id="patients-list"></div>
+                        </div>
+                    </div>
+                </ul>
+            </aside>
+
+            <!-- Main Content (Diagnosis History) -->
+            <main class="col-md-6 p-3">
+                <section id="diagnosis-history">
+                    <h4>Diagnosis History</h4>
+                    <canvas id="bloodPressureChart"></canvas>
+                    <div id="vitals" class="d-flex justify-content-between mt-4">
+                        <div class="vital-box text-center">
+                            <h5>Respiratory Rate</h5>
+                            <p id="respiratory-rate"> bpm</p>
+                            <span id="respiratory-rate-text"></span>
+                        </div>
+                        <div class="vital-box text-center">
+                            <h5>Temperature</h5>
+                            <p id="temperature">°F</p>
+                            <span id="temperature-rate-text"></span>
+                        </div>
+                        <div class="vital-box text-center">
+                            <h5>Heart Rate</h5>
+                            <p id="heart-rate"> bpm</p>
+                            <span id="heart-rate-text"></span>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section id="diagnostic-list">
+                    <h4>Diagnostic List</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Problem/Diagnosis</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="diagnostic-table"></tbody>
+                    </table>
+                </section>
+            </main>
+
+            <!-- Profile Section -->
+            <aside class="col-md-3 bg-light p-3">
+                <h4>Profile</h4>
+
+                <!-- Profile Photo -->
+                <div class="text-center">
+                    <img src="profile-photo.jpg" alt="Profile Photo" class="img-fluid rounded-circle"
+                        style="width: 150px; height: 150px;">
+                </div>
+
+                <!-- Profile Information -->
+                <div id="profile-info" class="mt-3">
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>DOB:</strong> 01/01/1989</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Contact:</strong> +1234567890</p>
+                    <p><strong>Emergency Contact:</strong> +0987654321</p>
+                    <p><strong>Provider:</strong> Dr. Jane Smith</p>
+                </div>
+
+                <!-- Option to Show All Profile Options -->
+                <button class="btn btn-primary w-100 mt-3" id="show-all-options">Show All Options</button>
+
+                <!-- Hidden Additional Options (Initially Hidden) -->
+                <div id="additional-options" class="mt-3" style="display: none;">
+                    <p><strong>Address:</strong> 123 Main St, City, Country</p>
+                    <p><strong>Insurance:</strong> XYZ Insurance</p>
+                    <p><strong>Allergies:</strong> Penicillin</p>
+                    <!-- Add other options as needed -->
+                </div>
+
+                <!-- Lab Results Section -->
+                <div class="row">
+                    <aside class="col-md-12 p-3">
+                        <h4>Lab Results</h4>
+                        <ul id="lab-list" class="list-group"></ul>
+                    </aside>
+                </div>
+            </aside>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
