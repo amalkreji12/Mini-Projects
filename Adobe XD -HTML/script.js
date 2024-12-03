@@ -39,6 +39,7 @@ function populateUI(data) {
     renderDiagnosisHistory(jessica.diagnosis_history);
     renderDiagnosticList(jessica.diagnostic_list);
     renderLabResults(jessica.lab_results);
+    renderProfile(jessica);
 }
 
 
@@ -142,6 +143,8 @@ function renderLabResults(results) {
     });
 }
 
+
+//Render Patients List
 function patientsList(data) {
     //console.log('patient list:',data);
     const patientsList = document.getElementById('patients-list');
@@ -156,4 +159,24 @@ function patientsList(data) {
         </li>`;
         patientsList.innerHTML += listItem;
     })
+}
+
+//Render Profile Section
+
+function renderProfile(data){
+    console.log('Profile :',data);
+    const profileSection = document.getElementById('profile-info');
+    const profileImage = document.getElementById('profile-image');
+    const image = 
+    `<img src="${data.profile_picture}" alt="Profile Photo" class="img-fluid rounded-circle"
+                        style="width: 150px; height: 150px;">`
+    const profileItems = 
+        `<p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>DOB:</strong> ${data.date_of_birth}</p>
+        <p><strong>Gender:</strong> ${data.gender}</p>
+        <p><strong>Contact:</strong> ${data.phone_number}</p>
+        <p><strong>Emergency Contact:</strong> ${data.emergency_contact}</p>
+        <p><strong>Provider:</strong> ${data.insurance_type}</p>` ;
+        profileSection.innerHTML += profileItems;
+        profileImage.innerHTML += image;
 }
